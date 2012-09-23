@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/Phone">
+  <interface name="org.oicf.Phone">
+
+    <!-- 
+    @response: getListResult
+    -->
+    <method name="getList">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="start" direction="in"/>
+      <arg type="i" name="end" direction="in"/>
+    </method>
+
+  </interface>
+</node>

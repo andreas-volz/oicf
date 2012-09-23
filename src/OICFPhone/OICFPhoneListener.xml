@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/PhoneListener">
+  <interface name="org.oicf.PhoneListener">
+
+    <signal name="getWindowListResult">
+      <arg type="a(sssssi)" name="phoneEntryVector">
+        <annotation name="org.freedesktop.DBus.Object" value="PhoneEntryVector"/>
+      </arg>
+      <arg type="i" name="start"/>
+      <arg type="i" name="end"/>
+      <arg type="i" name="size"/>
+    </signal>
+   
+   </interface>
+</node>

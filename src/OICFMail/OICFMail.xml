@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/Mail">
+  <interface name="org.oicf.Mail">
+
+    <!--
+    @response: getListResult
+    -->
+    <method name="getList">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="start" direction="in"/>
+      <arg type="i" name="end" direction="in"/>
+    </method>
+
+    <method name="send">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="ssssi" name="mailEntry">
+        <annotation name="org.freedesktop.DBus.Object" value="MailEntry"/>
+      </arg>
+    </method>
+    
+    <!--
+    @response: getListResult
+    -->
+    <method name="delete">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="id" direction="in"/>
+    </method>
+    
+  </interface>
+</node>

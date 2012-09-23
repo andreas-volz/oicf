@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/ControlListener">
+  <interface name="org.oicf.ControlListener">
+
+    <signal name="onAxisListener">
+      <arg type="(iny)" name="eventAxis">
+        <annotation name="org.freedesktop.DBus.Object" value="KeyEvent"/>
+			</arg>
+    </signal>
+
+    <signal name="onButtonListener">
+      <arg type="(iny)" name="eventButton">
+        <annotation name="org.freedesktop.DBus.Object" value="KeyEvent"/>
+			</arg>
+    </signal>
+
+  </interface>
+
+</node>

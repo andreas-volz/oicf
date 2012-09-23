@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/NavigationListener">
+  <interface name="org.oicf.NavigationListener">
+
+    <signal name="updateGPSPositionWGS84">
+      <arg type="(ddddd)" name="pos">
+        <annotation name="org.freedesktop.DBus.Object" value="CoordWGS84"/>
+			</arg>
+    </signal>
+
+    <signal name="searchCityResult">
+      <arg type="as" name="cities"/>
+    </signal>
+    
+    <signal name="getNextValidCharactersResult">
+      <arg type="s" name="validChars"/>
+    </signal>
+
+  </interface>
+</node>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/MailListener">
+  <interface name="org.oicf.MailListener">
+
+    <signal name="getWindowListResult">
+      <arg type="a(ssssi)" name="mailEntryVector">
+        <annotation name="org.freedesktop.DBus.Object" value="MailEntryVector"/>
+      </arg>
+      <arg type="i" name="start"/>
+      <arg type="i" name="end"/>
+      <arg type="i" name="size"/>
+    </signal>
+   
+   </interface>
+</node>

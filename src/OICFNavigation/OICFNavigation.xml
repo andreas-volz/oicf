@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/Navigation">
+  <interface name="org.oicf.Navigation">
+
+    <method name="moveMapSteps">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="direction" direction="in"/>
+      <arg type="i" name="steps" direction="in"/>
+    </method>
+
+    <method name="zoomIn">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+    </method>
+
+    <method name="zoomOut">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+    </method>
+
+    <method name="jumpToPointer">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+    </method>
+
+    <method name="searchCity">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="s" name="city" direction="in"/>
+    </method>
+
+    <method name="getNextValidCharacters">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+    </method>
+    
+    <method name="generic1">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="s" name="param1" direction="in"/>
+      <arg type="s" name="param2" direction="in"/>
+      <arg type="s" name="param3" direction="in"/>
+    </method>
+    
+    <method name="generic2">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="s" name="param1" direction="in"/>
+      <arg type="s" name="param2" direction="in"/>
+      <arg type="s" name="param3" direction="in"/>
+    </method>
+    
+    <method name="generic3">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="s" name="param1" direction="in"/>
+      <arg type="s" name="param2" direction="in"/>
+      <arg type="s" name="param3" direction="in"/>
+    </method>
+
+  </interface>
+</node>

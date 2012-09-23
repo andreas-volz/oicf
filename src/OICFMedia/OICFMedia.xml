@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/Media">
+  <interface name="org.oicf.Media">
+
+    <!-- 
+    @response: getWindowListResult
+    -->
+    <method name="getWindowList">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="start" direction="in"/>
+      <arg type="i" name="end" direction="in"/>
+    </method>
+
+    <!--
+    @response: updateSelectedPath
+    -->
+    <method name="selectPath">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="a(sii)" name="path" direction="in">
+        <annotation name="org.freedesktop.DBus.Object" value="LineVector"/>
+      </arg>
+    </method>
+
+    <!--
+    @response: updateSelectedTitle
+    -->
+    <method name="selectTitle">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="(sii)" name="title" direction="in">
+        <annotation name="org.freedesktop.DBus.Object" value="Line"/>
+      </arg>
+    </method>
+
+    <method name="changeDevice">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="device" direction="in"/>
+    </method>
+
+    <method name="incrementTitle">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="num" direction="in"/>
+    </method>
+
+    <method name="decrementTitle">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      <arg type="i" name="num" direction="in"/>
+    </method>
+
+  </interface>
+</node>

@@ -1,0 +1,13 @@
+prefix=
+exec_prefix=
+libdir=src/%LIBRARY_DIR%
+includedir=src/
+
+Name: @PACKAGE@
+Description: Open Infotainment Communication Framework - %LIBRARY_NAME%, Uninstalled
+Version: @VERSION@
+Requires: 
+Conflicts: 
+Libs: ${pcfiledir}/${libdir}/lib%LIBRARY%.la
+Cflags: -I${pcfiledir}/${includedir}
+

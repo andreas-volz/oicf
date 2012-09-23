@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<gtodo>
+  <category title="Bugs" place="0"/>
+  <category title="Features" place="1">
+    <item>
+      <attribute id="1219094416" priority="1" done="0" start_date="733272" enddate="99999999" notify="0" endtime="-60" last_edited="1219094453"/>
+      <summary>check if double include</summary>
+      <comment>does it cost memory to include e.g. KeyEvent.h in two dynamic librarys (Listerner/ListernerProvider)?</comment>
+    </item>
+    <item>
+      <attribute id="1219128453" priority="1" done="0" start_date="733273" enddate="99999999" notify="0" endtime="-60" last_edited="1219128453"/>
+      <summary>Pimpl implementation</summary>
+      <comment>Don't install Private headers and avoid usage.</comment>
+    </item>
+    <item>
+      <attribute id="1219128891" priority="1" done="0" start_date="733273" enddate="99999999" notify="0" endtime="-60" last_edited="1219128898"/>
+      <summary>Install files</summary>
+      <comment>decide which files to install and which not</comment>
+    </item>
+    <item>
+      <attribute id="1250034050" priority="1" done="0" start_date="733631" enddate="99999999" notify="0" endtime="-60" last_edited="1250034050"/>
+      <summary>Generate public headers</summary>
+      <comment>e.g. OICFMediaListener.h for OICFMediaListenerPrivate.h</comment>
+    </item>
+  </category>
+</gtodo>

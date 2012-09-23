@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<node name="/org/oicf/MediaListener">
+  <interface name="org.oicf.MediaListener">
+
+    <signal name="getWindowListResult">
+      <arg type="a(sii)" name="titleList">
+        <annotation name="org.freedesktop.DBus.Object" value="LineVector"/>
+      </arg>
+      <arg type="i" name="start"/>
+      <arg type="i" name="end"/>
+      <arg type="i" name="size"/>
+    </signal>
+
+    <signal name="updateSelectedPath">
+      <arg type="a(sii)" name="path">
+        <annotation name="org.freedesktop.DBus.Object" value="LineVector"/>
+      </arg>
+    </signal>
+
+    <signal name="updateSelectedTitle">
+      <arg type="(sii)" name="title">
+        <annotation name="org.freedesktop.DBus.Object" value="Line"/>
+      </arg>
+    </signal>
+
+    <!--
+    @param position The title position time as nano seconds (10^-9)
+    @param duration The title duration time as nano seconds (10^-9)
+    -->
+    <signal name="updatePlayPosition">
+      <arg type="x" name="position"/>
+      <arg type="x" name="duration"/>
+    </signal>
+    
+    <signal name="updateDeviceList">
+      <arg type="i" name="enumtest">
+        <annotation name="org.freedesktop.DBus.Object" value="DeviceEnum"/>
+      </arg>
+    </signal>
+
+  </interface>
+</node>
