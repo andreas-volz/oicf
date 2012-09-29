@@ -16,6 +16,9 @@ ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST = $(oicfdoc_DATA)
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = OICFMedia.pc OICFMediaProvider.pc OICFControl.pc OICFControlProvider.pc OICFNavigation.pc OICFNavigationProvider.pc OICFPhone.pc OICFPhoneProvider.pc OICFMail.pc OICFMailProvider.pc
+
 # Copy all the spec files. Of cource, only one is actually used.
 dist-hook:
 	for specfile in *.spec; do \
