@@ -1,32 +1,37 @@
 BUILT_SOURCES = OICFPhoneListenerPrivate.h OICFPhoneListenerProviderPrivate.h \
-								OICFPhonePrivate.h OICFPhoneProviderPrivate.h
+		OICFPhonePrivate.h OICFPhoneProviderPrivate.h
+
+OBJECT_H = PhoneEntry.h PhoneEntryVector.h
+API_H = OICFPhone.h OICFPhoneListener.h
+API_PROVIDER_H = OICFPhoneProvider.h OICFPhoneListenerProvider.h
+
+DBUS_XML_H = OICFPhone.xml OICFPhoneListener.xml
+
+oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H)
 
 # We don't want to install this header
 noinst_HEADERS = $(BUILT_SOURCES)
 
+oicfdir = \
+	$(pkgincludedir)/OICFPhone
+
 # Correctly clean the generated headers, but keep the xml description
 CLEANFILES = $(BUILT_SOURCES)
-EXTRA_DIST = OICFPhone.xml OICFPhoneListener.xml
+EXTRA_DIST = $(oicf_HEADERS) $(DBUS_XML)
 
 lib_LTLIBRARIES = \
 	libOICFPhone.la \
 	libOICFPhoneProvider.la 
 
 libOICFPhone_la_SOURCES = \
-	OICFPhone.h \
-	OICFPhoneListener.h \
+	$(API_H) \
 	PhoneEntry.cpp \
-	PhoneEntry.h \
-	PhoneEntryVector.cpp \
-	PhoneEntryVector.h
+	PhoneEntryVector.cpp
 
 libOICFPhoneProvider_la_SOURCES = \
-	OICFPhoneProvider.h \
-	OICFPhoneListenerProvider.h \
+	$(API_PROVIDER_H) \
 	PhoneEntry.cpp \
-	PhoneEntry.h \
-	PhoneEntryVector.cpp \
-	PhoneEntryVector.h
+	PhoneEntryVector.cpp 
 
 libOICFPhone_la_LIBADD = \
 	@DEBUG_LIBS@ \

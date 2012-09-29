@@ -1,28 +1,35 @@
 BUILT_SOURCES = OICFNavigationListenerPrivate.h OICFNavigationListenerProviderPrivate.h \
-								OICFNavigationPrivate.h OICFNavigationProviderPrivate.h
+		OICFNavigationPrivate.h OICFNavigationProviderPrivate.h
+
+OBJECT_H = CoordWGS84.h
+API_H = OICFNavigation.h OICFNavigationListener.h
+API_PROVIDER_H = OICFNavigationProvider.h OICFNavigationListenerProvider.h
+
+DBUS_XML_H = OICFNavigation.xml OICFNavigationListener.xml
+
+oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H)
 
 # We don't want to install this header
 noinst_HEADERS = $(BUILT_SOURCES)
 
+oicfdir = \
+	$(pkgincludedir)/OICFNavigation
+
 # Correctly clean the generated headers, but keep the xml description
 CLEANFILES = $(BUILT_SOURCES)
-EXTRA_DIST = OICFNavigation.xml OICFNavigationListener.xml
+EXTRA_DIST = $(oicf_HEADERS) $(DBUS_XML)
 
 lib_LTLIBRARIES = \
 	libOICFNavigation.la \
 	libOICFNavigationProvider.la
 
 libOICFNavigation_la_SOURCES = \
-	OICFNavigation.h \
-	OICFNavigationListener.h \
-	CoordWGS84.cpp \
-	CoordWGS84.h
+	$(API_H) \
+	CoordWGS84.cpp 
 
 libOICFNavigationProvider_la_SOURCES = \
-	OICFNavigationProvider.h \
-	OICFNavigationListenerProvider.h \
-	CoordWGS84.cpp \
-	CoordWGS84.h
+	$(API_PROVIDER_H) \
+	CoordWGS84.cpp 
 
 libOICFNavigation_la_LIBADD = \
 	@DEBUG_LIBS@ \

@@ -1,36 +1,39 @@
 BUILT_SOURCES = OICFMediaListenerPrivate.h OICFMediaListenerProviderPrivate.h \
-								OICFMediaPrivate.h OICFMediaProviderPrivate.h
+		OICFMediaPrivate.h OICFMediaProviderPrivate.h
+
+OBJECT_H = Line.h LineVector.h DeviceEnum.h
+API_H = OICFMedia.h OICFMediaListener.h
+API_PROVIDER_H = OICFMediaProvider.h OICFMediaListenerProvider.h
+
+DBUS_XML_H = OICFMedia.xml OICFMediaListener.xml
+
+oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H)
 
 # We don't want to install this header
 noinst_HEADERS = $(BUILT_SOURCES)
 
+oicfdir = \
+	$(pkgincludedir)/OICFMedia
+
 # Correctly clean the generated headers, but keep the xml description
 CLEANFILES = $(BUILT_SOURCES)
-EXTRA_DIST = OICFMedia.xml OICFMediaListener.xml
+EXTRA_DIST = $(oicf_HEADERS) $(DBUS_XML)
 
 lib_LTLIBRARIES = \
 	libOICFMedia.la \
 	libOICFMediaProvider.la
 
 libOICFMedia_la_SOURCES = \
-	OICFMedia.h \
-	OICFMediaListener.h \
+	$(API_H) \
 	Line.cpp \
-	Line.h \
 	LineVector.cpp \
-	LineVector.h \
-	DeviceEnum.cpp \
-	DeviceEnum.h
+	DeviceEnum.cpp 
 
 libOICFMediaProvider_la_SOURCES = \
-	OICFMediaProvider.h \
-	OICFMediaListenerProvider.h \
+	$(API_PROVIDER_H) \
 	Line.cpp \
-	Line.h \
 	LineVector.cpp \
-	LineVector.h \
-	DeviceEnum.cpp \
-	DeviceEnum.h
+	DeviceEnum.cpp 
 
 libOICFMedia_la_LIBADD = \
 	@DEBUG_LIBS@ \
