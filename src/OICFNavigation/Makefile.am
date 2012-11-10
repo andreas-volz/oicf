@@ -7,17 +7,17 @@ API_PROVIDER_H = OICFNavigationProvider.h OICFNavigationListenerProvider.h
 
 DBUS_XML_H = OICFNavigation.xml OICFNavigationListener.xml
 
-oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H)
+oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H) $(BUILT_SOURCES)
 
 # We don't want to install this header
-noinst_HEADERS = $(BUILT_SOURCES)
+#noinst_HEADERS = $(BUILT_SOURCES)
 
 oicfdir = \
 	$(pkgincludedir)/OICFNavigation
 
 # Correctly clean the generated headers, but keep the xml description
 CLEANFILES = $(BUILT_SOURCES)
-EXTRA_DIST = $(oicf_HEADERS) $(DBUS_XML)
+EXTRA_DIST = $(oicf_HEADERS)
 
 lib_LTLIBRARIES = \
 	libOICFNavigation.la \

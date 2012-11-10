@@ -7,17 +7,17 @@ API_PROVIDER_H = OICFMailProvider.h OICFMailListenerProvider.h
 
 DBUS_XML_H = OICFMail.xml OICFMailListener.xml
 
-oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H)
+oicf_HEADERS = $(API_H) $(API_PROVIDER_H) $(OBJECT_H) $(BUILT_SOURCES)
 
 # We don't want to install this header
-noinst_HEADERS = $(BUILT_SOURCES)
+#noinst_HEADERS = $(BUILT_SOURCES)
 
 oicfdir = \
 	$(pkgincludedir)/OICFMail
 
 # Correctly clean the generated headers, but keep the xml description
 CLEANFILES = $(BUILT_SOURCES)
-EXTRA_DIST = $(oicf_HEADERS) $(DBUS_XML)
+EXTRA_DIST = $(oicf_HEADERS)
 
 lib_LTLIBRARIES = \
 	libOICFMail.la \
