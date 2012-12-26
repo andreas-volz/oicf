@@ -2,15 +2,21 @@
 <node name="/org/oicf/ControlListener">
   <interface name="org.oicf.ControlListener">
 
+    <signal name="onRotaryListener">
+      <arg type="(iny)" name="eventRotary">
+        <annotation name="org.freedesktop.DBus.Object" value="RotaryEvent"/>
+			</arg>
+    </signal>
+
     <signal name="onAxisListener">
       <arg type="(iny)" name="eventAxis">
-        <annotation name="org.freedesktop.DBus.Object" value="KeyEvent"/>
+        <annotation name="org.freedesktop.DBus.Object" value="AxisEvent"/>
 			</arg>
     </signal>
 
     <signal name="onButtonListener">
       <arg type="(iny)" name="eventButton">
-        <annotation name="org.freedesktop.DBus.Object" value="KeyEvent"/>
+        <annotation name="org.freedesktop.DBus.Object" value="ButtonEvent"/>
 			</arg>
     </signal>
 

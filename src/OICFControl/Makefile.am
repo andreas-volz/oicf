@@ -1,6 +1,6 @@
 BUILT_SOURCES = OICFControlListenerPrivate.h OICFControlListenerProviderPrivate.h
 
-OBJECT_H = KeyEvent.h
+OBJECT_H = KeyEvent.h AxisEvent.h ButtonEvent.h RotaryEvent.h
 API_H = OICFControlListener.h
 API_PROVIDER_H = OICFControlListenerProvider.h
 
