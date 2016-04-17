@@ -31,6 +31,10 @@
       </arg>
     </method>
 
+    <method name="pause">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+    </method>
+
     <method name="changeDevice">
       <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
       <arg type="i" name="device" direction="in"/>
